@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>New Era Islamic School</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: #f5f9ff;
+      color: #333;
+    }
+
+    header {
+      background: #3f51b5;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #2c3e50;
+      padding: 10px 0;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #f39c12;
+    }
+
+    section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .card {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+      margin-bottom: 30px;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    footer {
+      text-align: center;
+      background: #3f51b5;
+      color: white;
+      padding: 15px;
+    }
+
+    .btn {
+      background-color: #3f51b5;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin: 5px;
+      display: inline-block;
+    }
+
+    .btn:hover {
+      background-color: #303f9f;
+    }
+    h3{
+color: #db690b;
+padding: 10;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>New Era Islamic School</h1>
+    <p>Empowering with Knowledge, Guided by Faith</p>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#principal">Principal's Message</a>
+    <a href="#vision">Vision & Mission</a>
+    <a href="#timetable">Timetable</a>
+    <a href="#announcements">Announcements</a>
+    <a href="#downloads">Downloads</a>
+    <a href="#login">Login</a>
+  </nav>
+
+  <section id="about" class="card">
+    <h2>About Us</h2>
+    <p>Welcome to New Era Islamic School, where we blend modern education with moral and spiritual values. Located in the heart of our community, we strive for academic excellence and character development.</p>
+  </section>
+
+  <section id="principal" class="card">
+    <h2>Principal's Message</h2>
+    <p>We believe in nurturing young minds with care, discipline, and knowledge. Our aim is to inspire students to become responsible citizens and lifelong learners. - <strong>Mrs. A. Fatima</strong></p>
+  </section>
+
+  <section id="vision" class="card">
+    <h2>Vision & Mission</h2>
+    <p><strong>Vision:</strong> To create a generation of enlightened individuals who lead with knowledge and ethics.<br>
+       <strong>Mission:</strong> To provide holistic education grounded in Islamic principles and modern pedagogy.</p>
+  </section>
+
+  <section id="timetable" class="card">
+    <h2>Class Timetable</h2>
+    <p>Our school runs from Monday to Saturday, 9 AM to 3 PM. Specific class-wise timetables are available to students upon login.</p>
+  </section>
+
+  <section id="announcements" class="card">
+    <h2>Announcements</h2>
+    <ul>
+      <li>📢 Admission open for 2025-26</li>
+      <li>📅 Parent-teacher meet on 20th March</li>
+      <li>🕌 Ramzan break from 15th March</li>
+    </ul>
+  </section>
+
+  <section id="downloads" class="card">
+    <h2>Download Section</h2>
+    <p>
+        <section id="downloads" class="card">
+            <h3>Note:result for primary to eighth will not consists</h3>
+            
+              <a href="results2025.pdf" class="btn" download="results2025.pdf" type="application/pdf">📄 Download Result Sheet</a>
+              <a href="syllabus2025.pdf" class="btn" download="syllabus2025.pdf" type="application/pdf">📘 Syllabus (PDF)</a>
+              <a href="admission_form.pdf" class="btn" download="admission_form.pdf" type="application/pdf">📥 Admission Form</a>
+              <a href="holiday_list.pdf" class="btn" download="holiday_list.pdf" type="application/pdf">🗓️ Holiday List</a>
+              <a href="sample_result_2025.pdf" class="btn" download>📄 Sample Result Sheet</a>
+              <a href="class10thresult.pdf" class="btn" download="class10thresult.pdf" type="application/pdf">class10thresult</a>
+            </p>
+          </section>
+          
+    </p>
+  </section>
+
+  <section id="login" class="card">
+    <h2>Student Login</h2>
+    <form onsubmit="return validateLogin(event)">
+      <label>Username:</label><br>
+      <input type="text" id="username" required><br><br>
+      <label>Password:</label><br>
+      <input type="password" id="password" required><br><br>
+      <button type="submit" class="btn">Login</button>
+      <p class="error" id="error-msg"></p>
+    </form>
+  </section>
+  
+
+  <footer>
+    &copy; 2025 New Era Islamic School. All Rights Reserved.
+  </footer>
+  <script>
+    function validateLogin(event) {
+      event.preventDefault();
+      const user = document.getElementById("username").value;
+      const pass = document.getElementById("password").value;
+      const errorMsg = document.getElementById("error-msg");
+  
+      if (user === "student123" && pass === "pass123") {
+        window.location.href = "dashboard.html";
+      } else {
+        errorMsg.textContent = "❌ Invalid username or password";
+      }
+    }
+  </script>
+  </body>
+  </html>
+  
